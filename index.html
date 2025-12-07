@@ -1,139 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWC3PT5T1R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MWC3PT5T1R');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Online GST Calculator India - Quick CGST, SGST, IGST</title>
-
-    <!-- Favicon -->
+    <title>Free Online GST Calculator India - CGST, SGST, IGST</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- OG Image for sharing -->
     <meta property="og:image" content="https://free-gst-calculator.netlify.app/favicon.ico">
+    <meta name="description" content="Free GST calculator India with quantity, discount & quick rates. Calculate CGST + SGST or IGST instantly.">
     
-    <meta name="description" content="Free GST calculator for India. Instantly calculate CGST + SGST (intrastate) or IGST (interstate). Accurate, fast, no signup.">
-    <meta name="keywords" content="GST calculator, free GST calculator India, CGST SGST IGST calculator, online GST calc 2025">
-
-    <!-- Google AdSense (verified) -->
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6119337295553747"
      crossorigin="anonymous"></script>
 
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f8f9fa; }
-        h1 { text-align: center; color: #007bff; }
-        form { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        label { display: block; margin: 15px 0 5px; font-weight: bold; }
-        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; }
-        button { padding: 12px 25px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
-        button:hover { background: #218838; }
-        #result { margin-top: 20px; padding: 15px; background: #e9f7ef; border-radius: 6px; font-size: 18px; }
-        .ad { margin: 30px auto; text-align: center; }
-        footer { text-align: center; margin-top: 50px; color: #666; font-size: 0.9em; }
+        body {font-family:Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;background:#f8f9fa;}
+        nav {text-align:center;margin:20px 0;}
+        nav a {margin:0 20px;color:#007bff;font-size:18px;text-decoration:none;}
+        h1 {text-align:center;color:#007bff;margin:10px 0;}
+        form {background:white;padding:25px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+        label {display:block;margin:15px 0 5px;font-weight:bold;}
+        input,select {width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;}
+        button {padding:10px 20px;margin:5px;background:#28a745;color:white;border:none;border-radius:6px;cursor:pointer;}
+        button:hover {background:#218838;}
+        #result {margin-top:20px;padding:20px;background:#e9f7ef;border-radius:8px;font-size:18px;}
+        .ad {margin:30px auto;text-align:center;}
+        .quick-btn {background:#007bff;margin:5px;padding:8px 12px;}
+        .share-btn {background:#25D366;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;margin:10px;display:inline-block;}
+        .share-btn.telegram {background:#0088cc;}
     </style>
 </head>
 <body>
-    <h1><nav style="text-align: center; margin: 20px 0;">
-    <a href="index.html" style="margin: 0 15px; text-decoration: none; color: #007bff;">Home</a>
-    <a href="about.html" style="margin: 0 15px; text-decoration: none; color: #007bff;">About</a>
-    <a href="privacy-policy.html" style="margin: 0 15px; text-decoration: none; color: #007bff;">Privacy</a>
-</nav>Free Online GST Calculator India</h1>
-    <p style="text-align:center;">Accurate GST calculation for intrastate (CGST + SGST) or interstate (IGST) transactions.</p>
 
-    <!-- Ad Banner 1 (above calculator) -->
-    <div class="ad">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6119337295553747"
-             data-ad-slot="4817295831"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy</a>
+</nav>
+
+<h1>Free Online GST Calculator India</h1>
+<p style="text-align:center;">Calculate CGST + SGST or IGST with quantity & discount support.</p>
+
+<!-- Ad 1 -->
+<div class="ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="4817295831" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<form>
+    <label>Transaction Type:</label>
+    <select id="type" onchange="toggleFields()">
+        <option value="intrastate">Intrastate (CGST + SGST)</option>
+        <option value="interstate">Interstate (IGST)</option>
+    </select>
+
+    <label>Quantity (optional):</label>
+    <input type="number" id="qty" value="1" min="1">
+
+    <label>Taxable Amount per unit (₹):</label>
+    <input type="number" id="amount" placeholder="e.g. 1000" required>
+
+    <label>Discount % (optional):</label>
+    <input type="number" id="discount" value="0" min="0" max="100">
+
+    <div id="intrastate-fields">
+        <label>CGST Rate (%):</label><input type="number" id="cgst" value="9" step="0.1">
+        <label>SGST Rate (%):</label><input type="number" id="sgst" value="9" step="0.1">
+    </div>
+    <div id="interstate-fields" style="display:none;">
+        <label>IGST Rate (%):</label><input type="number" id="igst" value="18" step="0.1">
     </div>
 
-    <form>
-        <label>Transaction Type:</label>
-        <select id="type" onchange="toggleFields()">
-            <option value="intrastate">Intrastate (CGST + SGST)</option>
-            <option value="interstate">Interstate (IGST)</option>
-        </select>
-
-        <label>Taxable Amount (₹):</label>
-        <input type="number" id="amount" placeholder="e.g. 10000" required>
-
-        <div id="intrastate-fields">
-            <label>CGST Rate (%):</label>
-            <input type="number" id="cgst" value="9" step="0.1">
-            <label>SGST Rate (%):</label>
-            <input type="number" id="sgst" value="9" step="0.1">
-        </div>
-
-        <div id="interstate-fields" style="display:none;">
-            <label>IGST Rate (%):</label>
-            <input type="number" id="igst" value="18" step="0.1">
-        </div>
-
-        <button type="button" onclick="calculate()">Calculate GST</button>
-        <button type="button" onclick="resetForm()" style="background:#dc3545; margin-left:10px;">Reset</button>
-    </form>
-
-    <div id="result"><div style="background: #e9f7ef; padding: 15px; border-radius: 6px; margin-top: 20px;">
-    <h3>How to Use</h3>
-    <ol>
-        <li>Select transaction type (intrastate or interstate).</li>
-        <li>Enter taxable amount and rates (defaults are common).</li>
-        <li>Click Calculate—results show instantly!</li>
-    </ol>
-    <p>Pro Tip: Use 18% IGST for interstate sales between different states.</p>
-</div></div>
-
-    <!-- Ad Banner 2 (below calculator) -->
-    <div class="ad">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6119337295553747"
-             data-ad-slot="7294835291"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+    <div style="text-align:center;margin:20px 0;">
+        <strong>Quick Rates:</strong>
+        <button type="button" class="quick-btn" onclick="setRates(2.5,2.5,5)">5%</button>
+        <button type="button" class="quick-btn" onclick="setRates(6,6,12)">12%</button>
+        <button type="button" class="quick-btn" onclick="setRates(9,9,18)">18%</button>
+        <button type="button" class="quick-btn" onclick="document.getElementById('igst').value=28">28% IGST</button>
     </div>
 
-    <footer style="text-align:center; margin:40px 0 20px; padding:15px; background:#f8f9fa; border-top:1px solid #ddd; font-size:0.9em; color:#555;">
+    <button type="button" onclick="calculate()">Calculate GST</button>
+    <button type="button" onclick="resetForm()" style="background:#dc3545;">Reset</button>
+</form>
+
+<div id="result"></div>
+
+<!-- Share Buttons -->
+<div style="text-align:center;margin:40px 0;">
+    <strong>Share this free tool:</strong><br><br>
+    <a href="https://wa.me/?text=Free GST Calculator India 👉 https://free-gst-calculator.netlify.app" class="share-btn" target="_blank">WhatsApp</a>
+    <a href="https://t.me/share/url?url=https://free-gst-calculator.netlify.app&text=Free GST Calculator India" class="share-btn telegram" target="_blank">Telegram</a>
+</div>
+
+<!-- Ad 2 -->
+<div class="ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="7294835291" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- Ad 3 -->
+<div class="ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="8888888888" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer style="text-align:center;margin:50px 0 20px;padding:15px;background:#f8f9fa;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
     © 2025 Free GST Calculator India | 
     <a href="privacy-policy.html">Privacy Policy</a> | 
     <a href="about.html">About</a> | 
     <a href="mailto:tryptophanmethane@gmail.com">Contact Us</a>
 </footer>
 
-    <script>
-        function toggleFields() {
-            const type = document.getElementById('type').value;
-            document.getElementById('intrastate-fields').style.display = type === 'intrastate' ? 'block' : 'none';
-            document.getElementById('interstate-fields').style.display = type === 'interstate' ? 'block' : 'none';
+<script>
+    function toggleFields() {
+        const t = document.getElementById('type').value;
+        document.getElementById('intrastate-fields').style.display = t==='intrastate' ? 'block' : 'none';
+        document.getElementById('interstate-fields').style.display = t==='interstate' ? 'block' : 'none';
+    }
+    function setRates(c,s,i){document.getElementById('cgst').value=c;document.getElementById('sgst').value=s;document.getElementById('igst').value=i;}
+    function calculate() {
+        let qty = parseFloat(document.getElementById('qty').value) || 1;
+        let amount = parseFloat(document.getElementById('amount').value);
+        let discount = parseFloat(document.getElementById('discount').value) || 0;
+        if (!amount || amount<=0) return document.getElementById('result').innerHTML="<p style='color:red;'>Enter valid amount</p>";
+        let taxable = amount * qty * (1 - discount/100);
+        let output = "", totalGST = 0;
+        if (document.getElementById('type').value === "intrastate") {
+            let cgst = parseFloat(document.getElementById('cgst').value);
+            let sgst = parseFloat(document.getElementById('sgst').value);
+            let cAmt = taxable * cgst / 100;
+            let sAmt = taxable * sgst / 100;
+            totalGST = cAmt + sAmt;
+            output = `CGST (${cgst}%): ₹${cAmt.toFixed(2)}<br>SGST (${sgst}%): ₹${sAmt.toFixed(2)}<br>`;
+        } else {
+            let igst = parseFloat(document.getElementById('igst').value);
+            totalGST = taxable * igst / 100;
+            output = `IGST (${igst}%): ₹${totalGST.toFixed(2)}<br>`;
         }
-        function calculate() {
-            const amount = parseFloat(document.getElementById('amount').value);
-            if (!amount || amount <= 0) return document.getElementById('result').innerHTML = "<p style='color:red;'>Enter valid amount</p>";
-            let output = "", totalGST = 0;
-            if (document.getElementById('type').value === "intrastate") {
-                const cgst = parseFloat(document.getElementById('cgst').value);
-                const sgst = parseFloat(document.getElementById('sgst').value);
-                const cAmt = amount * cgst / 100;
-                const sAmt = amount * sgst / 100;
-                totalGST = cAmt + sAmt;
-                output = `CGST (${cgst}%): ₹${cAmt.toFixed(2)}<br>SGST (${sgst}%): ₹${sAmt.toFixed(2)}<br>`;
-            } else {
-                const igst = parseFloat(document.getElementById('igst').value);
-                totalGST = amount * igst / 100;
-                output = `IGST (${igst}%): ₹${totalGST.toFixed(2)}<br>`;
-            }
-            document.getElementById('result').innerHTML = `${output}Total GST: ₹${totalGST.toFixed(2)}<br>Final Amount: ₹${(amount + totalGST).toFixed(2)}`;
-        }
-        function resetForm() { document.querySelector('form').reset(); toggleFields(); document.getElementById('result').innerHTML = ''; }
-        toggleFields();
-    </script>
+        let final = taxable + totalGST;
+        document.getElementById('result').innerHTML = `<strong>Taxable Amount after discount:</strong> ₹${taxable.toFixed(2)}<br>${output}<strong>Total GST:</strong> ₹${totalGST.toFixed(2)}<br><strong>Final Amount:</strong> ₹${final.toFixed(2)}`;
+    }
+    function resetForm() {document.querySelector('form').reset();document.getElementById('qty').value=1;document.getElementById('discount').value=0;toggleFields();document.getElementById('result').innerHTML='';}
+    toggleFields();
+</script>
 </body>
 </html>
