@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Invoice Generator - All GST India 2025</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:image" content="https://free-gst-calculator.netlify.app/favicon.ico">
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Adsterra Popunder – Keep it here -->
+    <script type="text/javascript" src="https://pl28244657.effectivegatecpm.com/64/dc/41/64dc41996f8047966a4916f1ad2c303c.js" ></script>
+    <style>
+        body {font-family:Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;background:#f8f9fa; animation: fadeIn 1s;}
+        nav {text-align:center;margin:20px 0; animation: slideIn 0.5s;}
+        nav a {margin:0 20px;color:#007bff;font-size:18px;text-decoration:none;}
+        h1 {text-align:center;color:#007bff;}
+        form {background:white;padding:25px;border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); animation: fadeIn 1s;}
+        label {display:block;margin:15px 0 5px;}
+        input {width:100%;padding:12px;border:1px solid #ddd;border-radius:6px; animation: fadeIn 1s;}
+        button {padding:10px 20px;margin:5px;background:#28a745;color:white;border:none;border-radius:6px;cursor:pointer; transition: background 0.3s;}
+        button:hover {background:#218838;}
+        .ad {margin:30px auto;text-align:center; animation: fadeIn 1s;}
+        @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
+        @keyframes slideIn {from {transform: translateY(-20px);} to {transform: translateY(0);}}
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="gst-rates.html">GST Rates</a>
+    <a href="invoice.html">Invoice Generator</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy</a>
+</nav>
+<h1>GST Invoice Generator</h1>
+<form id="invoiceForm">
+    <label>Invoice Number:</label>
+    <input type="text" id="invNum" placeholder="e.g., INV-001" required>
+    <label>Seller Name:</label>
+    <input type="text" id="seller" placeholder="Your Company Name" required>
+    <label>Buyer Name:</label>
+    <input type="text" id="buyer" placeholder="Buyer's Name" required>
+    <label>Item Description:</label>
+    <input type="text" id="item" placeholder="e.g., Laptop" required>
+    <label>Quantity:</label>
+    <input type="number" id="qty" value="1" min="1" required>
+    <label>Amount (₹):</label>
+    <input type="number" id="amount" placeholder="e.g., 1000" required>
+    <label>GST Rate (%):</label>
+    <input type="number" id="gstRate" value="18" step="0.1" required>
+    <button type="button" onclick="generateInvoice()">Generate Invoice</button>
+</form>
+<div id="invoicePreview" style="margin:20px 0;"></div>
+<!-- Adsterra Popunder – Keep it here -->
+<script type="text/javascript" src="https://pl28244657.effectivegatecpm.com/64/dc/41/64dc41996f8047966a4916f1ad2c303c.js" ></script>
+<div class="ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="4817295831" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<script>
+    function generateInvoice() {
+        const invNum = document.getElementById('invNum').value;
+        const seller = document.getElementById('seller').value;
+        const buyer = document.getElementById('buyer').value;
+        const item = document.getElementById('item').value;
+        const qty = parseFloat(document.getElementById('qty').value);
+        const amount = parseFloat(document.getElementById('amount').value);
+        const gstRate = parseFloat(document.getElementById('gstRate').value);
+        const gst = amount * qty * (gstRate / 100);
+        const total = amount * qty + gst;
+
+        document.getElementById('invoicePreview').innerHTML = `
+            <h2>Invoice #${invNum}</h2>
+            <p>Seller: ${seller}</p>
+            <p>Buyer: ${buyer}</p>
+            <p>Item: ${item}</p>
+            <p>Quantity: ${qty}</p>
+            <p>Amount: ₹${amount.toFixed(2)}</p>
+            <p>GST (${gstRate}%): ₹${gst.toFixed(2)}</p>
+            <p>Total: ₹${total.toFixed(2)}</p>
+            <button onclick="exportPDF()">Download PDF</button>
+        `;
+    }
+    function exportPDF() {
+        const doc = new jsPDF();
+        doc.text("Invoice # " + document.getElementById('invNum').value, 10, 10);
+        doc.text("Seller: " + document.getElementById('seller').value, 10, 20);
+        doc.text("Buyer: " + document.getElementById('buyer').value, 10, 30);
+        doc.text("Item: " + document.getElementById('item').value, 10, 40);
+        doc.text("Quantity: " + document.getElementById('qty').value, 10, 50);
+        doc.text("Amount: ₹" + document.getElementById('amount').value, 10, 60);
+        doc.text("GST: ₹" + (document.getElementById('amount').value * document.getElementById('qty').value * document.getElementById('gstRate').value / 100).toFixed(2), 10, 70);
+        doc.text("Total: ₹" + (parseFloat(document.getElementById('amount').value) * document.getElementById('qty').value + parseFloat(document.getElementById('amount').value) * document.getElementById('qty').value * document.getElementById('gstRate').value / 100).toFixed(2), 10, 80);
+        doc.save('gst-invoice.pdf');
+    }
+</script>
+</body>
+</html>
