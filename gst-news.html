@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST News Feed - All GST India 2025</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:image" content="https://free-gst-calculator.netlify.app/favicon.ico">
+    <!-- Adsterra Popunder -->
+    <script type="text/javascript" src="https://pl28244657.effectivegatecpm.com/64/dc/41/64dc41996f8047966a4916f1ad2c303c.js" ></script>
+    <style>
+        body {font-family:Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;background:#f8f9fa; animation: fadeIn 1s;}
+        nav {text-align:center;margin:20px 0; animation: slideIn 0.5s;}
+        nav a {margin:0 20px;color:#007bff;font-size:18px;text-decoration:none;}
+        h1 {text-align:center;color:#007bff;}
+        #news {margin:20px 0; animation: fadeIn 1s;}
+        .news-item {padding:10px;border-bottom:1px solid #ddd; transition: background 0.3s;}
+        .news-item:hover {background: #e9f7ef;}
+        .ad {margin:30px auto;text-align:center; animation: fadeIn 1s;}
+        @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
+        @keyframes slideIn {from {transform: translateY(-20px);} to {transform: translateY(0);}}
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="gst-rates.html">GST Rates</a>
+    <a href="invoice.html">Invoice Generator</a>
+    <a href="gst-news.html">GST News</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy</a>
+</nav>
+<h1>GST News Feed 2025</h1>
+<div id="news"></div>
+<!-- Adsterra Popunder -->
+<script type="text/javascript" src="https://pl28244657.effectivegatecpm.com/64/dc/41/64dc41996f8047966a4916f1ad2c303c.js" ></script>
+<div class="ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="4817295831" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<script>
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.gst.gov.in/rss/feed.xml')
+        .then(response => response.json())
+        .then(data => {
+            let output = '';
+            data.items.forEach(item => {
+                output += `<div class="news-item"><a href="${item.link}" target="_blank">${item.title}</a><p>${item.pubDate}</p></div>`;
+            });
+            document.getElementById('news').innerHTML = output;
+        })
+        .catch(error => console.error(error));
+</script>
+</body>
+</html>
