@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Rates Finder - All GST India 2025</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:image" content="https://free-gst-calculator.netlify.app/favicon.ico">
+    <meta name="description" content="Search 2025 GST rates for items in India. HSN/SAC codes, CGST, SGST, IGST.">
+    <!-- Adsterra Popunder – Keep it here -->
+    <script type="text/javascript" src="https://pl28244657.effectivegatecpm.com/64/dc/41/64dc41996f8047966a4916f1ad2c303c.js" ></script>
+    <style>
+        body {font-family:Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;background:#f8f9fa; animation: fadeIn 1s;}
+        nav {text-align:center;margin:20px 0; animation: slideIn 0.5s;}
+        nav a {margin:0 20px;color:#007bff;font-size:18px;text-decoration:none;}
+        h1 {text-align:center;color:#007bff;}
+        input {width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;margin-bottom:20px; animation: fadeIn 1s;}
+        table {width:100%;border-collapse:collapse; animation: fadeIn 1s;}
+        th, td {border:1px solid #ddd;padding:8px;text-align:left;}
+        th {background:#007bff;color:white;}
+        tr:hover {background:#f1f1f1;}
+        .ad {margin:30px auto;text-align:center; animation: fadeIn 1s;}
+        @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
+        @keyframes slideIn {from {transform: translateY(-20px);} to {transform: translateY(0);}}
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="gst-rates.html">GST Rates</a>
+    <a href="invoice.html">Invoice Generator</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy</a>
+</nav>
+<h1>GST Rates Finder 2025</h1>
+<input type="text" id="search" placeholder="Search item/HSN/SAC (e.g., laptop, 5%)" onkeyup="searchRates()">
+<table id="ratesTable">
+    <thead>
+        <tr>
+            <th>Item/HSN</th>
+            <th>CGST (%)</th>
+            <th>SGST (%)</th>
+            <th>IGST (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Laptop (8471)</td><td>9</td><td>9</td><td>18</td></tr>
+        <tr><td>Mobile Phone (8517)</td><td>9</td><td>9</td><td>18</td></tr>
+        <tr><td>Gold (7108)</td><td>1.5</td><td>1.5</td><td>3</td></tr>
+        <tr><td>Milk (0401)</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>Car (8703)</td><td>14</td><td>14</td><td>28</td></tr>
+        <!-- Add 20+ more rows from gst.gov.in for content -->
+        <tr><td>Books (4901)</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>Clothing (6204)</td><td>2.5</td><td>2.5</td><td>5</td></tr>
+        <tr><td>Medicines (3004)</td><td>6</td><td>6</td><td>12</td></tr>
+        <tr><td>AC (8415)</td><td>14</td><td>14</td><td>28</td></tr>
+        <tr><td>Fridge (8418)</td><td>9</td><td>9</td><td>18</td></tr>
+        <tr><td>Tea (0902)</td><td>2.5</td><td>2.5</td><td>5</td></tr>
+        <tr><td>Software (8523)</td><td>9</td><td>9</td><td>18</td></tr>
+        <tr><td>Hotel Room (9963)</td><td>9</td><td>9</td><td>18</td></tr>
+        <tr><td>Transport (9964)</td><td>2.5</td><td>2.5</td><td>5</td></tr>
+        <tr><td>Legal Services (9982)</td><td>9</td><td>9</td><td>18</td></tr>
+        <tr><td>Education (9992)</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>Hospital (9993)</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>Insurance (9971)</td><td>9</td><td>9</td><td>18</td></tr>
+        <tr><td>Banking (9971)</td><td>9</td><td>9</td><td>18</td></tr>
+        <tr><td>Telecom (9984)</td><td>9</td><td>9</td><td>18</td></tr>
+    </tbody>
+</table>
+<!-- Adsterra Popunder – Keep it here -->
+<script type="text/javascript" src="https://pl28244657.effectivegatecpm.com/64/dc/41/64dc41996f8047966a4916f1ad2c303c.js" ></script>
+<div class="ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="4817295831" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<script>
+    function searchRates() {
+        let input = document.getElementById('search').value.toLowerCase();
+        let table = document.getElementById('ratesTable');
+        let tr = table.getElementsByTagName('tr');
+        for (let i = 1; i < tr.length; i++) {
+            let td = tr[i].getElementsByTagName('td')[0];
+            if (td) {
+                tr[i].style.display = td.textContent.toLowerCase().indexOf(input) > -1 ? "" : "none";
+            }
+        }
+    }
+</script>
+</body>
+</html>
