@@ -9,75 +9,102 @@
       gtag('js', new Date());
       gtag('config', 'G-MWC3PT5T1R');
     </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Online GST Calculator India - CGST, SGST, IGST</title>
+    <title>All GST India 2025 - Calculator, Rates, Invoices, News</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta property="og:image" content="https://free-gst-calculator.netlify.app/favicon.ico">
-    <meta name="description" content="Free GST calculator India with quantity, discount & quick rates. Calculate CGST + SGST or IGST instantly.">
-    
+    <meta name="description" content="All-in-one GST India 2025: Calculator, rates finder, invoice generator, GSTIN validator, news, offline, dark mode.">
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6119337295553747"
      crossorigin="anonymous"></script>
-
-    <script
-  type="text/javascript"
-  src="https://pl28244657.effectivegatecpm.com/64/dc/41/64dc41996f8047966a4916f1ad2c303c.js"
-></script>
-    
     <meta name="google-adsense-account" content="ca-pub-6119337295355747">
-    
     <style>
-        body {font-family:Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;background:#f8f9fa;}
-        nav {text-align:center;margin:20px 0;}
+        body {font-family:Arial,sans-serif;max-width:800px;margin:0 auto;padding:20px;background:#f8f9fa; animation: fadeIn 1s;}
+        body.dark-mode {background:#333;color:#fff;}
+        nav {text-align:center;margin:20px 0; animation: slideIn 0.5s;}
         nav a {margin:0 20px;color:#007bff;font-size:18px;text-decoration:none;}
-        h1 {text-align:center;color:#007bff;margin:10px 0;}
-        form {background:white;padding:25px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+        .dark-mode nav a {color:#4da6ff;}
+        h1 {text-align:center;color:#007bff;margin:10px 0; animation: fadeIn 1s;}
+        .dark-mode h1 {color:#4da6ff;}
+        form {background:white;padding:25px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.1); animation: fadeIn 1s;}
+        .dark-mode form {background:#444;}
         label {display:block;margin:15px 0 5px;font-weight:bold;}
-        input,select {width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;}
-        button {padding:10px 20px;margin:5px;background:#28a745;color:white;border:none;border-radius:6px;cursor:pointer;}
+        .dark-mode label {color:#ddd;}
+        input,select {width:100%;padding:12px;border:1px solid #ddd;border-radius:6px; animation: fadeIn 1s;}
+        .dark-mode input, .dark-mode select {border:1px solid #666;background:#555;color:#fff;}
+        button {padding:10px 20px;margin:5px;background:#28a745;color:white;border:none;border-radius:6px;cursor:pointer; transition: background 0.3s;}
         button:hover {background:#218838;}
-        #result {margin-top:20px;padding:20px;background:#e9f7ef;border-radius:8px;font-size:18px;}
-        .ad {margin:30px auto;text-align:center;}
-        .quick-btn {background:#007bff;margin:5px;padding:8px 12px;}
-        .share-btn {background:#25D366;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;margin:10px;display:inline-block;}
+        #result {margin-top:20px;padding:20px;background:#e9f7ef;border-radius:8px;font-size:18px; animation: fadeIn 1s;}
+        .dark-mode #result {background:#555;}
+        .ad {margin:30px auto;text-align:center; animation: fadeIn 1s;}
+        .quick-btn {background:#007bff;margin:5px;padding:8px 12px; transition: transform 0.3s;}
+        .quick-btn:hover {transform: scale(1.05);}
+        .share-btn {background:#25D366;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;margin:10px;display:inline-block; transition: transform 0.3s;}
+        .share-btn:hover {transform: scale(1.05);}
         .share-btn.telegram {background:#0088cc;}
+        #itemTable {width:100%;margin:20px 0;}
+        #itemTable th, #itemTable td {padding:10px;border:1px solid #ddd;}
+        .dark-mode #itemTable th, .dark-mode #itemTable td {border:1px solid #666;}
+        #history {margin-top:40px; animation: fadeIn 1s;}
+        #gstin {margin:20px 0;}
+        #gstin-result {color:green;}
+        #gstin-result.error {color:red;}
+        @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
+        @keyframes slideIn {from {transform: translateY(-20px);} to {transform: translateY(0);}}
     </style>
 </head>
 <body>
-
 <nav>
     <a href="index.html">Home</a>
+    <a href="gst-rates.html">GST Rates</a>
+    <a href="invoice.html">Invoice Generator</a>
+    <a href="gst-news.html">GST News</a>
     <a href="about.html">About</a>
     <a href="privacy-policy.html">Privacy</a>
 </nav>
-
-<h1>Free Online GST Calculator India</h1>
-<p style="text-align:center;">Calculate CGST + SGST or IGST with quantity & discount support.</p>
-
+<h1>All GST India 2025</h1>
+<p style="text-align:center;">Calculate GST, find rates, generate invoices, validate GSTIN, news — all in one!</p>
 <!-- Ad 1 -->
 <div class="ad">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="4817295831" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
-<form>
+<button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+<!-- GSTIN Validator -->
+<div id="gstin">
+    <label>GSTIN Validator:</label>
+    <input type="text" id="gstinNum" placeholder="e.g., 27AAECS2864C1ZP">
+    <button type="button" onclick="validateGSTIN()">Validate GSTIN</button>
+    <p id="gstin-result"></p>
+</div>
+<!-- Multi-Item Calculator -->
+<form id="multiForm">
     <label>Transaction Type:</label>
     <select id="type" onchange="toggleFields()">
         <option value="intrastate">Intrastate (CGST + SGST)</option>
         <option value="interstate">Interstate (IGST)</option>
     </select>
-
-    <label>Quantity (optional):</label>
-    <input type="number" id="qty" value="1" min="1">
-
-    <label>Taxable Amount per unit (₹):</label>
-    <input type="number" id="amount" placeholder="e.g. 1000" required>
-
-    <label>Discount % (optional):</label>
-    <input type="number" id="discount" value="0" min="0" max="100">
-
+    <table id="itemTable">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Amount (₹)</th>
+                <th>Discount (%)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" placeholder="Item Name"></td>
+                <td><input type="number" value="1" min="1"></td>
+                <td><input type="number" placeholder="1000"></td>
+                <td><input type="number" value="0" min="0" max="100"></td>
+                <td><button type="button" onclick="addItemRow()">+</button></td>
+            </tr>
+        </tbody>
+    </table>
     <div id="intrastate-fields">
         <label>CGST Rate (%):</label><input type="number" id="cgst" value="9" step="0.1">
         <label>SGST Rate (%):</label><input type="number" id="sgst" value="9" step="0.1">
@@ -85,7 +112,6 @@
     <div id="interstate-fields" style="display:none;">
         <label>IGST Rate (%):</label><input type="number" id="igst" value="18" step="0.1">
     </div>
-
     <div style="text-align:center;margin:20px 0;">
         <strong>Quick Rates:</strong>
         <button type="button" class="quick-btn" onclick="setRates(2.5,2.5,5)">5%</button>
@@ -93,39 +119,46 @@
         <button type="button" class="quick-btn" onclick="setRates(9,9,18)">18%</button>
         <button type="button" class="quick-btn" onclick="document.getElementById('igst').value=28">28% IGST</button>
     </div>
-
-    <button type="button" onclick="calculate()">Calculate GST</button>
+    <button type="button" onclick="calculateMulti()">Calculate GST</button>
     <button type="button" onclick="resetForm()" style="background:#dc3545;">Reset</button>
 </form>
-
 <div id="result"></div>
-
+<!-- History -->
+<div id="history">
+    <h2>Calculation History</h2>
+    <ul id="historyList"></ul>
+    <button onclick="clearHistory()">Clear History</button>
+</div>
+<!-- Reverse GST -->
+<div id="reverse">
+    <h2>Reverse GST Calculator</h2>
+    <input type="number" id="reverseTotal" placeholder="Total Amount (incl. GST)">
+    <input type="number" id="reverseRate" value="18" step="0.1" placeholder="GST Rate (%)">
+    <button type="button" onclick="reverseGST()">Reverse Calculate</button>
+    <p id="reverse-result"></p>
+</div>
 <!-- Share Buttons -->
 <div style="text-align:center;margin:40px 0;">
     <strong>Share this free tool:</strong><br><br>
     <a href="https://wa.me/?text=Free GST Calculator India 👉 https://free-gst-calculator.netlify.app" class="share-btn" target="_blank">WhatsApp</a>
     <a href="https://t.me/share/url?url=https://free-gst-calculator.netlify.app&text=Free GST Calculator India" class="share-btn telegram" target="_blank">Telegram</a>
 </div>
-
 <!-- Ad 2 -->
 <div class="ad">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="7294835291" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
 <!-- Ad 3 -->
 <div class="ad">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6119337295553747" data-ad-slot="8888888888" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
 <footer style="text-align:center;margin:50px 0 20px;padding:15px;background:#f8f9fa;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
-    © 2025 Free GST Calculator India | 
-    <a href="privacy-policy.html">Privacy Policy</a> | 
-    <a href="about.html">About</a> | 
+    © 2025 All GST India 2025 |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="about.html">About</a> |
     <a href="mailto:tryptophanmethane@gmail.com">Contact Us</a>
 </footer>
-
 <script>
     function toggleFields() {
         const t = document.getElementById('type').value;
@@ -133,30 +166,84 @@
         document.getElementById('interstate-fields').style.display = t==='interstate' ? 'block' : 'none';
     }
     function setRates(c,s,i){document.getElementById('cgst').value=c;document.getElementById('sgst').value=s;document.getElementById('igst').value=i;}
-    function calculate() {
-        let qty = parseFloat(document.getElementById('qty').value) || 1;
-        let amount = parseFloat(document.getElementById('amount').value);
-        let discount = parseFloat(document.getElementById('discount').value) || 0;
-        if (!amount || amount<=0) return document.getElementById('result').innerHTML="<p style='color:red;'>Enter valid amount</p>";
-        let taxable = amount * qty * (1 - discount/100);
+    function addItemRow() {
+        const table = document.getElementById('itemTable').getElementsByTagName('tbody')[0];
+        const row = table.insertRow();
+        row.innerHTML = `<td><input type="text" placeholder="Item Name"></td><td><input type="number" value="1" min="1"></td><td><input type="number" placeholder="1000"></td><td><input type="number" value="0" min="0" max="100"></td><td><button type="button" onclick="removeItemRow(this)">-</button></td>`;
+    }
+    function removeItemRow(btn) {btn.parentNode.parentNode.remove();}
+    function calculateMulti() {
+        let rows = document.getElementById('itemTable').getElementsByTagName('tbody')[0].rows;
+        let totalTaxable = 0;
         let output = "", totalGST = 0;
-        if (document.getElementById('type').value === "intrastate") {
+        for (let row of rows) {
+            let item = row.cells[0].getElementsByTagName('input')[0].value;
+            let qty = parseFloat(row.cells[1].getElementsByTagName('input')[0].value) || 1;
+            let amount = parseFloat(row.cells[2].getElementsByTagName('input')[0].value) || 0;
+            let discount = parseFloat(row.cells[3].getElementsByTagName('input')[0].value) || 0;
+            let taxable = amount * qty * (1 - discount/100);
+            totalTaxable += taxable;
+            output += `<p>${item}: Taxable ₹${taxable.toFixed(2)}</p>`;
+        }
+        if (totalTaxable <= 0) return document.getElementById('result').innerHTML="<p style='color:red;'>Enter valid amounts</p>";
+        let type = document.getElementById('type').value;
+        if (type === "intrastate") {
             let cgst = parseFloat(document.getElementById('cgst').value);
             let sgst = parseFloat(document.getElementById('sgst').value);
-            let cAmt = taxable * cgst / 100;
-            let sAmt = taxable * sgst / 100;
+            let cAmt = totalTaxable * cgst / 100;
+            let sAmt = totalTaxable * sgst / 100;
             totalGST = cAmt + sAmt;
-            output = `CGST (${cgst}%): ₹${cAmt.toFixed(2)}<br>SGST (${sgst}%): ₹${sAmt.toFixed(2)}<br>`;
+            output += `CGST (${cgst}%): ₹${cAmt.toFixed(2)}<br>SGST (${sgst}%): ₹${sAmt.toFixed(2)}<br>`;
         } else {
             let igst = parseFloat(document.getElementById('igst').value);
-            totalGST = taxable * igst / 100;
-            output = `IGST (${igst}%): ₹${totalGST.toFixed(2)}<br>`;
+            totalGST = totalTaxable * igst / 100;
+            output += `IGST (${igst}%): ₹${totalGST.toFixed(2)}<br>`;
         }
-        let final = taxable + totalGST;
-        document.getElementById('result').innerHTML = `<strong>Taxable Amount after discount:</strong> ₹${taxable.toFixed(2)}<br>${output}<strong>Total GST:</strong> ₹${totalGST.toFixed(2)}<br><strong>Final Amount:</strong> ₹${final.toFixed(2)}`;
+        let final = totalTaxable + totalGST;
+        output += `<strong>Total GST: ₹${totalGST.toFixed(2)}</strong><br><strong>Final Amount: ₹${final.toFixed(2)}</strong>`;
+        document.getElementById('result').innerHTML = output;
+        saveHistory(output);
     }
+    function reverseGST() {
+        let total = parseFloat(document.getElementById('reverseTotal').value) || 0;
+        let rate = parseFloat(document.getElementById('reverseRate').value) || 0;
+        if (total <= 0 || rate <= 0) return document.getElementById('reverse-result').innerHTML = "<p style='color:red;'>Enter valid values</p>";
+        let taxable = total / (1 + rate/100);
+        let gst = total - taxable;
+        document.getElementById('reverse-result').innerHTML = `Taxable Amount: ₹${taxable.toFixed(2)}<br>GST: ₹${gst.toFixed(2)}`;
+        saveHistory(`Reverse GST: Taxable ₹${taxable.toFixed(2)}, GST ₹${gst.toFixed(2)}`);
+    }
+    function validateGSTIN() {
+        let gstin = document.getElementById('gstinNum').value.trim();
+        let result = document.getElementById('gstin-result');
+        if (gstin.length !== 15 || !/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(gstin)) {
+            result.innerHTML = "Invalid GSTIN";
+            result.classList.add('error');
+            return;
+        }
+        result.innerHTML = "Valid GSTIN";
+        result.classList.remove('error');
+    }
+    function saveHistory(output) {
+        let history = localStorage.getItem('gstHistory') ? JSON.parse(localStorage.getItem('gstHistory')) : [];
+        history.push({date: new Date().toLocaleString(), result: output});
+        localStorage.setItem('gstHistory', JSON.stringify(history));
+        loadHistory();
+    }
+    function loadHistory() {
+        let history = localStorage.getItem('gstHistory') ? JSON.parse(localStorage.getItem('gstHistory')) : [];
+        let list = document.getElementById('historyList');
+        list.innerHTML = '';
+        history.forEach(item => {
+            let li = document.createElement('li');
+            li.innerHTML = `<strong>${item.date}</strong><p>${item.result}</p>`;
+            list.appendChild(li);
+        });
+    }
+    function clearHistory() {localStorage.removeItem('gstHistory'); loadHistory();}
     function resetForm() {document.querySelector('form').reset();document.getElementById('qty').value=1;document.getElementById('discount').value=0;toggleFields();document.getElementById('result').innerHTML='';}
     toggleFields();
+    loadHistory();
 </script>
 </body>
 </html>
